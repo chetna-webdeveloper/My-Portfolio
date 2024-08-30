@@ -8,10 +8,10 @@ import Skills from '../Skills/Skills';
 import Projects from '../Projects/Projects'
 function Home() {
   return (<>
-    <div className="Home w-full h-screen  border-b-2 border-gray-400 bg-black text-white">
+    <div className="Home w-full h-auto lg:h-screen border-b-2 border-gray-400 bg-black text-white">
       {/* {"home section"} */}
      
-      <section  id="Home" className="Home grid grid-cols-2 gap-9 ">
+      <section  id="Home" className="Home grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-9 ">
         <div className="intro p-10 flex flex-col md:w-2/3">
           <span className='text-2xl mt-10'>Hello</span>
           <span className='text-4xl md:text-5xl font-bold '>I'm <span className='text-blue-900 border-b-2 border-white'> Chetna</span></span>
@@ -28,7 +28,7 @@ function Home() {
           </div>
           
         </div>
-        <div className="   hover:bg-blue-700 bg-blue-500 bg-opacity-30 backdrop-blur-lg border border-white/20 rounded-lg shadow-lg shadow-blue-500/30 inset-shadow text-white font-bold text-center cursor-pointer hover:bg-opacity-50 transition duration-300 ease-in-out animate-profile_animate shadow-custom-dark shadow-inset-custom w-1/2 p-1 mt-10 mr-10"  >
+        <div className="hidden lg:flex md:flex hover:bg-blue-700 bg-blue-500 bg-opacity-30 backdrop-blur-lg border border-white/20 rounded-lg shadow-lg shadow-blue-500/30 inset-shadow text-white font-bold text-center cursor-pointer hover:bg-opacity-50 transition duration-300 ease-in-out animate-profile_animate shadow-custom-dark shadow-inset-custom w-1/2 p-1 mt-10 mr-10"  >
           <img className="animate-profile_animate shadow-custom-dark shadow-inset-custom p-2 mt-10" src={my} alt="" />
          
         </div>

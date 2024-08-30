@@ -2,14 +2,16 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import Home from '../Home/Home';
+
+import { FaBars, FaTimes } from 'react-icons/fa'
 // import {contactme} from '../../assets/contactme.png'
 import Contactme from '../../assets/contactme.png'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/Logo.png'
 
 
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(Home);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -20,7 +22,7 @@ function Header() {
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
         <div className="flex items-center space-x-4">
-          <img src={logo} alt="Logo" className="h-12 w-auto" />
+          <img src={logo} alt="Logo" className="h-12 w-auto rounded-lg overflow-hidden " />
           {/* <span className="text-xl font-bold">YourLogo</span> */}
         </div>
 
@@ -31,7 +33,7 @@ function Header() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-white-700" : "text-blue-700"}  border-white border-2 hover:bg-gray-50 hover:pb-2 hover:border-b-2 hover:border-white-600 lg:hover:bg-transparent lg:border-0 hover:text-white-700 lg:p-0`
+                  `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-700" :"text-white-700" }    hover:pb-2 hover:border-b-2 hover:border-white lg:hover:bg-transparent lg:border-0 hover:text-white-700 lg:p-0`
                 }
               >
                 Home
@@ -41,8 +43,8 @@ function Header() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-white-700" : "text-blue-700"}  border-white border-2 hover:bg-gray-50 hover:pb-2 hover:border-b-2 hover:border-white-600 lg:hover:bg-transparent lg:border-0 hover:text-white-700 lg:p-0`
-                }
+                `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-700" :"text-white-700" }    hover:pb-2 hover:border-b-2 hover:border-white lg:hover:bg-transparent lg:border-0 hover:text-white-700 lg:p-0`
+              }
               >
                 About
               </NavLink>
@@ -51,8 +53,8 @@ function Header() {
               <NavLink
                 to="/skills"
                 className={({ isActive }) =>
-                  `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-white-700" : "text-blue-700"}  border-white border-2 hover:bg-gray-50 hover:pb-2 hover:border-b-2 hover:border-white-600 lg:hover:bg-transparent lg:border-0 hover:text-white-700 lg:p-0`
-                }
+                `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-700" :"text-white-700" }    hover:pb-2 hover:border-b-2 hover:border-white lg:hover:bg-transparent lg:border-0 hover:text-white-700 lg:p-0`
+              }
               >
                 Skills
               </NavLink>
@@ -61,8 +63,8 @@ function Header() {
               <NavLink
                 to="/projects"
                 className={({ isActive }) =>
-                  `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-white-700" : "text-blue-700"}  border-white border-2 hover:bg-gray-50 hover:pb-2 hover:border-b-2 hover:border-white-600 lg:hover:bg-transparent lg:border-0 hover:text-white-700 lg:p-0`
-                }
+                `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-700" :"text-white-700" }    hover:pb-2 hover:border-b-2 hover:border-white lg:hover:bg-transparent lg:border-0 hover:text-white-700 lg:p-0`
+              }
               >
                 Projects
               </NavLink>
@@ -71,20 +73,34 @@ function Header() {
         </div>
 
 
-        {/* {mobile Nav} */}
-        <div
-          className={`lg:hidden absolute top-16 right-0 w-1/3 bg-gray-800 text-white transition-transform ${isOpen ? 'transform translate-y-0' : 'transform -translate-y-full'
-            }`}>
-          <div className="flex flex-col items-center py-4">
-            <Link to="/" className="py-2" onClick={toggleMenu}>Home</Link>
-            <Link to="/about" className="py-2" onClick={toggleMenu}>About</Link>
-            <Link to="/skills" className="py-2" onClick={toggleMenu}>Skills</Link>
-            <Link to="/projects" className="py-2" onClick={toggleMenu}>Projects</Link>
-            <Link to="/contact" className="py-2" onClick={toggleMenu}>Contact</Link>
+    {/* Mobile Menu Toggle Button */}
+    <button onClick={toggleMenu} className="text-white md:hidden focus:outline-none">
+          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
 
-            <Link to="/" className="py-2" onClick={toggleMenu}>☰</Link>
+        {/* {mobile Nav} */}
+            {/* Mobile Navigation Links */}
+            {isOpen && (
+          <div className="absolute top-16 right-0 w-full bg-gray-800 text-white transition-transform md:hidden">
+            <ul className="flex flex-col items-center py-4">
+              <li className="py-2">
+                <NavLink to="/" onClick={toggleMenu} >Home</NavLink>
+              </li>
+              <li className="py-2">
+                <NavLink to="/about" onClick={toggleMenu}>About</NavLink>
+              </li>
+              <li className="py-2">
+                <NavLink to="/skills" onClick={toggleMenu}>Skills</NavLink>
+              </li>
+              <li className="py-2">
+                <NavLink to="/projects" onClick={toggleMenu}>Projects</NavLink>
+              </li>
+              <li className="py-2">
+                <NavLink to="/contact" onClick={toggleMenu}>Contact</NavLink>
+              </li>
+            </ul>
           </div>
-        </div>
+        )}
 
         {/* Contact Us Button */}
         <Link

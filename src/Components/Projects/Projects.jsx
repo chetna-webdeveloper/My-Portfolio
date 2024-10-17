@@ -77,27 +77,32 @@ function Portfolio() {
             </div>
 
             <div className="flex flex-col items-center p-6 bg-blue-900 bg-opacity-40 backdrop-blur-lg border border-blue-500 rounded-lg shadow-lg transition-transform transform hover:scale-105 cursor-pointer">
+              <h3 className="text-2xl mb-3 border-b-2 border-white inline-block">ChatWeb</h3>
+              <p className="text-center">
+              It's a Full stack chat web application. In this I used mongodb,
+express ,socket.io and Reactjs for making it a real time chat web
+application and deploy it on render.as u can check by clicking on
+the given link.In this website any one can sign-up and can start
+chat with anyone.
+              </p>
+              <a href="https://chatweb-1-cnmt.onrender.com/Login" target="_blank" rel="noopener noreferrer" className="mt-4 text-blue-400 hover:underline">Visit Project</a>
+            </div>
+
+            <div className="flex flex-col items-center p-6 bg-blue-900 bg-opacity-40 backdrop-blur-lg border border-blue-500 rounded-lg shadow-lg transition-transform transform hover:scale-105 cursor-pointer">
               <h3 className="text-2xl mb-3 border-b-2 border-white inline-block">My-JS-Projects</h3>
               <p className="text-center">
-                A compilation of 30 small JavaScript projects including a calculator, age calculator, password generator, and more. 
+              A compilation of 30 small JavaScript projects including a calculator, age calculator, password generator, and more. 
               </p>
-              <a href="https://github.com/yourusername/My-JS-Projects" target="_blank" rel="noopener noreferrer" className="mt-4 text-blue-400 hover:underline">Visit Repository</a>
+              <a href="https://main--html-css-js-api-projects.netlify.app/" target="_blank" rel="noopener noreferrer" className="mt-4 text-blue-400 hover:underline">Visit Project</a>
             </div>
 
             <div className="flex flex-col items-center p-6 bg-blue-900 bg-opacity-40 backdrop-blur-lg border border-blue-500 rounded-lg shadow-lg transition-transform transform hover:scale-105 cursor-pointer">
-              <h3 className="text-2xl mb-3 border-b-2 border-white inline-block">Other Project</h3>
+              <h3 className="text-2xl mb-3 border-b-2 border-white inline-block">My Portfolio</h3>
               <p className="text-center">
-                Brief description of another project. This can include technologies used, and what you learned from it.
+              It's a my portfolio website.I made this website by using Reactjs
+and deployed it on vercel.
               </p>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="mt-4 text-blue-400 hover:underline">Visit Project</a>
-            </div>
-
-            <div className="flex flex-col items-center p-6 bg-blue-900 bg-opacity-40 backdrop-blur-lg border border-blue-500 rounded-lg shadow-lg transition-transform transform hover:scale-105 cursor-pointer">
-              <h3 className="text-2xl mb-3 border-b-2 border-white inline-block">Another Project</h3>
-              <p className="text-center">
-                Another project description, with a focus on what it does and the tech stack behind it.
-              </p>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="mt-4 text-blue-400 hover:underline">Visit Project</a>
+              <a href="https://my-portfolio-ten-omega-85.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-4 text-blue-400 hover:underline">Visit Project</a>
             </div>
 
             <div className="flex flex-col items-center p-6 bg-blue-900 bg-opacity-40 backdrop-blur-lg border border-blue-500 rounded-lg shadow-lg transition-transform transform hover:scale-105 cursor-pointer">
